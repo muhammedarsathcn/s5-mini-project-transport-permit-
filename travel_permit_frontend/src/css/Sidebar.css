@@ -1,0 +1,43 @@
+.sidebar {
+    width: 250px;
+    background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(255, 67, 161), #816694);
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar h3 {
+    color: white;
+    font-size: x-large;
+    margin-bottom: 10%; /* Space below h3 */
+  }
+  
+  .sidebar hr {
+    border: none; /* Remove default border */
+    border-top: 3px solid rgba(255, 255, 255, 0.5); /* Line color */
+    margin: 10px 0; /* Margin above and below the line */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 5%;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 20px;
+    padding: 10px;  
+    cursor: pointer;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #6c4588;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(108, 69, 136, 0.5); /* Adjust the opacity as needed */
+}
