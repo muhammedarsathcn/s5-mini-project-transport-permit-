@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./css/AdminApprove.css";
-import img from "./images/TWP logo.png";
+import Sidebar from "./components/AdminSidebar";
 export default function Approval() {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -57,17 +57,12 @@ export default function Approval() {
   };
 
   return (
-    <div>
-      <div className="header">
-        <img src={img} alt="Login" />
-        <h1>Transport Permit</h1>
-      </div>
-      <div className="line"></div>
-      <div className="title">
-      <h1>Approval Page</h1>
-      </div>
+    <div style={{display:"flex"}}>
+    
+      <Sidebar/>
 
       <div className="approval-wrap">
+        <div className="title"><h1>Pending Lists</h1></div>
         {details.map((show, index) => (
           <div key={index} className="container-approval">
             <div className="small-container-approval">

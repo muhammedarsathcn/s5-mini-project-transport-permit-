@@ -1,49 +1,29 @@
 import React from "react";
-import approvedImage from "./images/approvedimg.jpg";
-import checklist from "./images/checklist.jpg";
-import img from "./images/TWP logo.png";
-import './css/AdminHomePage.css';
-import { Link } from "react-router-dom";
-
-export default function AdminLandingPage() {
+import Sidebar from "./components/AdminSidebar";
+import './css/AdminHomePage.css'
+export default function AdminHomePage() {
   return (
-    <div>
-       <div className="header">
-        <img src={img} alt="Login" />
-        <h1>Transport Permit</h1>
-      </div>
-      <div className="line"></div>
-      <div className="title">
-      <h1>Admin Home Page</h1>
-      </div>
-
-      <div className="admin-hm-container">
-    
-        <Link to="/admin-approve" style={{ textDecoration: "none", color: "black" }}>
-          <div className="admin-hm-sm-container">
-            <img src={checklist} alt=" Approval Page" />
-            <p>Approval Page</p>
-          </div>
-        </Link>
-
-   
-        <Link
-          to="/approvedlist"
-          style={{ textDecoration: "none", color: "black" }}
-        >
-          <div className="admin-hm-sm-container">
-            <img src={approvedImage} alt="Approved list " />
-            <p>Approved List</p>
-          </div>
-        </Link>
-
-
-        <Link to="/deleted" style={{ textDecoration: "none", color: "black" }}>
-          <div className="admin-hm-sm-container">
-            <img src={approvedImage} alt="Deleted list " />
-            <p>Deleted List</p>
-          </div>
-        </Link>
+    <div style={{display:"flex"}}>
+      <Sidebar />
+      <div className="info" >
+        What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry. Lorem Ipsum has been the industry's standard
+        dummy text ever since the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type specimen book. It has survived
+        not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with
+        the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software like Aldus PageMaker including
+        versions of Lorem Ipsum. Why do we use it? It is a long established fact
+        that a reader will be distracted by the readable content of a page when
+        looking at its layout. The point of using Lorem Ipsum is that it has a
+        more-or-less normal distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English. Many
+        desktop publishing packages and web page editors now use Lorem Ipsum as
+        their default model text, and a search for 'lorem ipsum' will uncover
+        many web sites still in their infancy. Various versions have evolved
+        over the years, sometimes by accident, sometimes on purpose (injected
+        humour and the like).
       </div>
     </div>
   );

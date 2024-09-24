@@ -4,6 +4,7 @@ import UserRegister from "./UserRegister";
 import UserFrom from "./UserForm";
 import AdminApprove from './AdminApprove';
 import AdminLandingPage from './AdminHomePage';
+import ApprovedList from './ApprovedList';
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ function App() {
     {
       path:"/admin-landingpage",
       element:<AdminLandingPage/>
+    },
+    {
+      path:"/approved-list",
+      element:<ApprovedList/>
     }
   ])
   return (
