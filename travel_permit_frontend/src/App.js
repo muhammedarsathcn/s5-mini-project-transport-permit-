@@ -5,6 +5,7 @@ import UserFrom from "./UserForm";
 import AdminApprove from './AdminApprove';
 import AdminLandingPage from './AdminHomePage';
 import ApprovedList from './ApprovedList';
+import './App.css'
 
 function App() {
   const router = createBrowserRouter([

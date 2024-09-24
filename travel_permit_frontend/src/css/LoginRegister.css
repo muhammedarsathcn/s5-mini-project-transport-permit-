@@ -1,19 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body, #root, .App {
-  height: 100%;
+.header {
   width: 100%;
   display: flex;
-  flex-direction: column; 
-  background-color: white;
+  justify-content: space-between;
   align-items: center;
+  background-color: white;
+  padding: 20px;
+  position: relative;
 }
-body {
-  background-color: #f0f0f0;
+
+.header img {
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+  width: 50px; 
+  height: auto;
+}
+
+.header h1 {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(246, 0, 123), #816694);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 auto;
+}
+
+.header a {
+  background: linear-gradient(to bottom, rgb(246, 96, 121), rgb(246, 0, 123), #816694);
+  -webkit-background-clip: icon;
+  color: white;
+  height: 40px;
+  width: 45px;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  position: relative;
+}
+
+.line {
+  width: 100vw; /* Ensure it takes the full viewport width */
+  height: 10px;
+  background: linear-gradient(to right, rgb(246, 96, 121), rgba(171, 46, 255, 0.679), #816694);
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove padding */
 }
 
 .page {
@@ -21,15 +52,13 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 10px 0 rgba(254, 88, 149, 0.9);
-  width: 100%; /* Adjust width to be more responsive */
-  max-width: 700px;
+  width: 700px;
+  height: 400px;
   background: linear-gradient(to right, #BB6D64 50%, white 50%);
   border-radius: 10px;
-  overflow: hidden;
+  overflow: hidden;  
   margin-top: 100px;
-  flex-wrap: wrap; /* Allows content to wrap if needed */
 }
-
 .box {
   display: flex;
   flex-direction: column;
@@ -38,7 +67,18 @@ body {
   width: 50%;
   padding: 20px;
   text-align: center;
-  height: auto; /* Ensures dynamic height */
+}
+.logins{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(254, 88, 149, 0.9);
+  width: 700px;
+  height: 400px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;  
+  margin-top: 100px;
 }
 
 .box img {
@@ -104,18 +144,33 @@ button:hover {
   display: none;
 }
 @media (max-width: 768px) {
-  .page {
-    margin-top: 50px;
+  .header h1 {
+    font-family: 'Poppins';
+    font-size: 10px;
+    margin-top: 35px;
+    padding-right: 280px;
+  }
+
+  .header img {
+    width: 30px;
+    height: 30px;
+  }
+  .line {
+    margin-top: 0px;
     width: 100%;
-    flex-direction: column;
-    box-shadow: none;
-    background: none;
+    height: 4px;
   }
   .box {
     width: 100%;
-    height: auto; /* Makes the box adapt to content */
   }
-
+  
+  .page {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    box-shadow: none;
+    background: none; }
   .pinkBox {
     width: 100%;
     height: 100px;
