@@ -59,7 +59,7 @@ export default function Register() {
       <div className="page">
         <div className="box pinkBox">
           
-          <h1>Login</h1>
+          <h1>Register</h1>
           <p className="registerText">Already Registered?</p>
           <p className="registerText">Login now!</p><br/>
           <button variant="conatined" onClick={()=>navigate('/')}><b>Go to Login</b></button>

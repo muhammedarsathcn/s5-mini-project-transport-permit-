@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import img from './images/TWP logo.png'; // Ensure the path to the image is correct
+import img from './images/TWP logo.png'; 
 import './css/LoginRegister.css';
 import {useNavigate } from "react-router-dom";
 
@@ -37,34 +37,34 @@ export default function UserLogin() {
   
   
   return (
-    <div className="App">
-      <div className="header">
-      <img src={img} alt="Login" />
-        <h1>Transport Permit</h1> 
+    <div >
+    <div className="header">
+    <img src={img} alt="Login" />
+      <h1>Transport Permit</h1> 
+    
+    </div>
+       <div className="line"></div>
+    <div className="page">
+      <div className="box pinkBox">
+        <h1>Login</h1>
+        <p className="registerText">New user?</p>
+        <p className="registerText">Register now!</p><br/>
+        <button variant="contained" onClick={() => navigate("/register")}>
+          <b>Go to Register</b>
+        </button> 
+        </div>      
+         <div className="box whiteBox">
+        <h1 className='log'>Login</h1>
+        <input type="text" id="email" name="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} required />
+        <input type="password" id="password" name="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} required />
+        <button type="submit" onClick={handlelogin}>Login</button>
+        <a href="#"><br></br>Forget password?</a>
+      </div>
+      <div className='media_register'>
+        <h4>New User?  <a href="/register">Register Now</a></h4>
       
       </div>
-         <div className="line"></div>
-      <div className="page">
-        <div className="box pinkBox">
-          <h1>Login</h1>
-          <p className="registerText">New user?</p>
-          <p className="registerText">Register now!</p><br/>
-          <button variant="contained" onClick={() => navigate("/user-register")}>
-            <b>Go to Register</b>
-          </button> 
-          </div>      
-           <div className="box whiteBox">
-          <h1>Login</h1>
-          <input type="text" id="email" name="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} required />
-          <input type="password" id="password" name="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} required />
-          <button type="submit" onClick={handlelogin}>Login</button>
-         
-        </div>
-        <div className='media_register'>
-          <h4>New User?  <a href="/user-register">Register Now</a></h4>
-        
-        </div>
-      </div>
     </div>
+  </div>
   );
 }
