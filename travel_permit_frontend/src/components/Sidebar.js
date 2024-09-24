@@ -7,8 +7,7 @@ const Sidebar = () => {
       <h3>Transport Permit</h3>
       <hr></hr>
       <ul>
-        <li>Home</li>
-        <li>Notifications</li>
+        <li>Homesss</li>
         <li>Profile</li>
         <li>Logout</li>
       </ul>
