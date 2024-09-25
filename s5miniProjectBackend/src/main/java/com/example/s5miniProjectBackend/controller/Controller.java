@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.s5miniProjectBackend.entity.UserForm;
 import com.example.s5miniProjectBackend.service.Service;
 
+import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 @RestController
@@ -85,21 +86,33 @@ ADD USER FORM CODE
     @GetMapping("/get-all-userdetails")
     public List<UserForm> getAllDetails()
     {
+
         return service.getAllUserDetails();
     }
     
-    /*post Takal user form */
+    /*post Tatkkal user form */
     @PostMapping("/takaladd")
 	public String takaladd(@RequestBody TakalUser detail) {
 		service.savetakaldetails(detail);
-		return "User Detils Added Successfully!!!";
+		return "User Details Added Successfully!!!";
 	}    
     
     @PostMapping("/add-to-approval-list")
     public String addApprovedList(@RequestBody UserForm userForm)
     {
         service.addApprovedList(userForm);
-        return "SuccesFull";
+        return "SuccessFull";
     }
-
+    @PutMapping("/status-change/{id}")
+    public ResponseEntity<UserForm> editStatus(@PathVariable Integer id)
+    {
+        UserForm userForm = service.editStatus(id);
+        return  ResponseEntity.ok(userForm);
+    }
+    @GetMapping("/pending-list")
+    public ResponseEntity<List<UserForm>> getPendingList()
+    {
+        List<UserForm> pendingList = service.getPendingList();
+        return  ResponseEntity.ok(pendingList);
+    }
 }

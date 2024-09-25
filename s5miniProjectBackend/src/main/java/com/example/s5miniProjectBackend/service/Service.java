@@ -20,4 +20,10 @@ public interface Service {
     boolean checkIfUserExists(String email);
 
     UserForm addApprovedList(UserForm userForm);
+
+
+
+    UserForm editStatus(Integer id);
+
+    List<UserForm> getPendingList();
 }

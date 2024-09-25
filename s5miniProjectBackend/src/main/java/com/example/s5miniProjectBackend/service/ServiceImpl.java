@@ -7,9 +7,12 @@ import com.example.s5miniProjectBackend.repository.ApprovedListRepository;
 import com.example.s5miniProjectBackend.repository.TakalUserRepository;
 import com.example.s5miniProjectBackend.repository.UserFormRepository;
 import com.example.s5miniProjectBackend.repository.UserRegisterRepository;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 @org.springframework.stereotype.Service
 public class ServiceImpl implements Service{
@@ -55,4 +58,26 @@ public class ServiceImpl implements Service{
     public UserForm addApprovedList(UserForm userForm) {
         return approvedListRepository.save(userForm);
     }
+
+
+
+
+    @Override
+    public UserForm editStatus(Integer id) {
+        Optional<UserForm> existedData = userFormRepository.findById(id);
+        if(existedData.isPresent())
+        {
+            UserForm userForm = existedData.get();
+            userForm.setStatus("Approved");
+            userFormRepository.save(userForm);
+        }
+        return null;
+    }
+
+    @Override
+    public List<UserForm> getPendingList() {
+        return userFormRepository.findByStatus("pending");
+    }
+
+
 }

@@ -5,12 +5,14 @@ export default function Approval() {
   const [details, setDetails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/transportpermit/get-all-userdetails"
+          "http://localhost:8080/transportpermit/pending-list"
         );
         if (!response.ok) {
           throw new Error(`HTTP ERROR: ${response.status}`);
@@ -33,28 +35,23 @@ export default function Approval() {
     return <div>Error: {error.message}</div>;
   }
 
-  const update = async (id) => {
-    try {
-      const response = await fetch(
-        `http://localhost:8080/update/${id}?status=verified`,
-        {
-          method: "PUT",
+  const handleStatus = async (id) =>{
+
+    try{
+       await fetch(`http://localhost:8080/transportpermit/status-change/${id}`,{
+        method:"PUT",
+        headers:{
+          "Content-Type":"application/json"
         }
-      );
-      if (response.ok) {
-        alert("Status updated");
-        // Optionally, refetch the details to reflect the updated status
-        const updatedDetails = details.map((detail) =>
-          detail.id === id ? { ...detail, status: "verified" } : detail
-        );
-        setDetails(updatedDetails);
-      } else {
-        alert("Status update failed");
-      }
-    } catch (error) {
-      alert("Status update failed");
+      })
+      window.location.reload();
     }
-  };
+    catch(error)
+    {
+      console.error("Error in Updating Status",error);
+    }
+  }
+  
 
   return (
     <div style={{display:"flex"}}>
@@ -104,7 +101,7 @@ export default function Approval() {
 
             <div className="Btn-container-approval">
               <button className="btn-reject">Reject</button>
-              <button className="btn-approval" onClick={() => update(show.id)}>
+              <button className="btn-approval" onClick={() =>{handleStatus(show.id)}}>
                 Accept
               </button>
             </div>
