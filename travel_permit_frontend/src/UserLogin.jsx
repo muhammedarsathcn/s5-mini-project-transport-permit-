@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import img from './images/TWP logo.png'; 
-import './css/LoginRegister.css';
+// import './css/LoginRegister.css';
+import './App.css'
 import {useNavigate } from "react-router-dom";
 
 export default function UserLogin() {
@@ -37,7 +38,7 @@ export default function UserLogin() {
   
   
   return (
-    <div >
+    <div>
     <div className="header">
     <img src={img} alt="Login" />
       <h1>Transport Permit</h1> 
