@@ -115,4 +115,11 @@ ADD USER FORM CODE
         List<UserForm> pendingList = service.getPendingList();
         return  ResponseEntity.ok(pendingList);
     }
+
+    @GetMapping("/approved-list")
+    public  ResponseEntity<List<UserForm>> getApprovedList()
+    {
+        List<UserForm> approvedList = service.getApprovedList();
+        return  ResponseEntity.ok(approvedList);
+    }
 }
