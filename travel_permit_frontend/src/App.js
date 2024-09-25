@@ -9,12 +9,17 @@ import ApprovedList from './ApprovedList';
 import CheckHome from './CheckHome';
 import CheckVerify from './CheckpostVerify';
 import './App.css'
+import UserHome from './UserHome';
 
 function App() {
   const router = createBrowserRouter([
     {
       path:"/",
       element:<UserLogin/>
+    },
+    {
+      path:"/user-home",
+      element:<UserHome/>
     },
     {
       path:"/user-register",
