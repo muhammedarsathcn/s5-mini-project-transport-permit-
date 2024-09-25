@@ -21,4 +21,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-application.properties
+s5miniProjectBackend/src/main/resources/application.properties 
