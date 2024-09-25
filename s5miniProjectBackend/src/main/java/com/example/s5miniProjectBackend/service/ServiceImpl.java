@@ -79,5 +79,11 @@ public class ServiceImpl implements Service{
         return userFormRepository.findByStatus("pending");
     }
 
+    @Override
+    public List<UserForm> getApprovedList() {
+        return userFormRepository.findByStatus("Approved");
+
+    }
+
 
 }

@@ -26,4 +26,6 @@ public interface Service {
     UserForm editStatus(Integer id);
 
     List<UserForm> getPendingList();
+
+    List<UserForm> getApprovedList();
 }
