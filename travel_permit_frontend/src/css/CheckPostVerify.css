@@ -1,0 +1,18 @@
+.maincontent {
+    flex-grow: 1;
+    padding: 20px;
+    width: 850px;
+    margin-left: 170px;
+  }
+  
+  .searchbox {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .searchbox button{
+    width: 75px;
+  }
+  .searchbox input{
+    width: 60%;
+  }

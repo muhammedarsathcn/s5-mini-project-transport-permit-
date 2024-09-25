@@ -28,4 +28,6 @@ public interface Service {
     List<UserForm> getPendingList();
 
     List<UserForm> getApprovedList();
+
+    UserForm passedVehicle(Integer id);
 }

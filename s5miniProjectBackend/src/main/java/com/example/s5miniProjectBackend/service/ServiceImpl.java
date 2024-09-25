@@ -85,5 +85,17 @@ public class ServiceImpl implements Service{
 
     }
 
+    @Override
+    public UserForm passedVehicle(Integer id) {
+        Optional<UserForm> data = userFormRepository.findById(id);
+        if(data.isPresent())
+        {
+            UserForm userForm = data.get();
+            userForm.setStatus("Passed");
+            userFormRepository.save(userForm);
+        }
+        return null;
+    }
+
 
 }
