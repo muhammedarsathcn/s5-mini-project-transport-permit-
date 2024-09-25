@@ -20,17 +20,13 @@ public class UserForm {
     private String toDate;
     private String vehicleMode;
     private String amount;
-    private String status="pending";
 
-    public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
 
 	// Getters and setters
+
+private String status = "pending";
+    // Getters and setters
+
     public String getVehicleMode() {
         return vehicleMode;
     }
@@ -117,5 +113,13 @@ public class UserForm {
 
     public void setToDate(String toDate) {
         this.toDate = toDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
