@@ -122,4 +122,10 @@ ADD USER FORM CODE
         List<UserForm> approvedList = service.getApprovedList();
         return  ResponseEntity.ok(approvedList);
     }
+    @PutMapping("/passed-status/{id}")
+    public ResponseEntity<UserForm> passedVehicle(@PathVariable Integer id)
+    {
+        UserForm userForm = service.passedVehicle(id);
+        return  ResponseEntity.ok(userForm);
+    }
 }

@@ -8,8 +8,8 @@ const Sidebar = () => {
       <hr></hr>
       <ul>
         <li>Homesss</li>
-        <li>Normal Form</li>
-        <li>Takal Form</li>
+        <a href="/user-form"><li>Normal Form</li></a>
+        <a href="/takal-form"><li>Takal Form</li></a>
         <li>Profile</li>
         <li>Logout</li>
       </ul>

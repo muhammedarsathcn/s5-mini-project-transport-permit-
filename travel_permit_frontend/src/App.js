@@ -6,6 +6,8 @@ import TakalUserForm from './TakalUserForm';
 import AdminApprove from './AdminApprove';
 import AdminLandingPage from './AdminHomePage';
 import ApprovedList from './ApprovedList';
+import CheckHome from './CheckHome';
+import CheckVerify from './CheckpostVerify';
 import './App.css'
 
 function App() {
@@ -37,6 +39,14 @@ function App() {
     {
       path:"/approved-list",
       element:<ApprovedList/>
+    },
+    {
+      path:"/check-home",
+      element:<CheckHome/>
+    },
+    {
+      path:"/check-verify",
+      element:<CheckVerify/>
     }
   ])
   return (
