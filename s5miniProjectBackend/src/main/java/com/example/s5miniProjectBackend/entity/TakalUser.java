@@ -20,6 +20,7 @@ public class TakalUser {
 	private String toDate;
 	private String vehicleMode;
 	private String amount;
+	private String status = "pending";
 	
 	public String getVehicleMode() {
 		return vehicleMode;

@@ -20,8 +20,13 @@ public class UserForm {
     private String toDate;
     private String vehicleMode;
     private String amount;
+
+
+	// Getters and setters
+
 private String status = "pending";
     // Getters and setters
+
     public String getVehicleMode() {
         return vehicleMode;
     }
