@@ -50,7 +50,7 @@ export default function Register() {
   
 
   return (
-    <div className="App">
+    <div className='App'>
       <div className="header">
       <img src={img} alt="Login" />
         <h1>Transport Permit</h1> 
@@ -73,7 +73,7 @@ export default function Register() {
           <button type="submit" onClick={handleRegister}>Register</button>
           <div className='media_register'>
           <h4><br></br>Already Registered?</h4>
-          <a href="/">Login Now</a>
+          <a href="/"><b>Login Now</b></a>
         </div>
         </div>
       </div>

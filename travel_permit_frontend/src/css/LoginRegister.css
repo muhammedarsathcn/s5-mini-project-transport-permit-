@@ -50,6 +50,7 @@
 .page {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   align-items: center;
   box-shadow: 0 0 10px 0 rgba(254, 88, 149, 0.9);
   width: 700px;
