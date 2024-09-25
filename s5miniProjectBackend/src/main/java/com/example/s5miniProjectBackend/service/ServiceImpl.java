@@ -1,8 +1,10 @@
 package com.example.s5miniProjectBackend.service;
 
+import com.example.s5miniProjectBackend.entity.TakalUser;
 import com.example.s5miniProjectBackend.entity.UserForm;
 import com.example.s5miniProjectBackend.entity.UserRegister;
 import com.example.s5miniProjectBackend.repository.ApprovedListRepository;
+import com.example.s5miniProjectBackend.repository.TakalUserRepository;
 import com.example.s5miniProjectBackend.repository.UserFormRepository;
 import com.example.s5miniProjectBackend.repository.UserRegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +13,28 @@ import java.util.List;
 
 @org.springframework.stereotype.Service
 public class ServiceImpl implements Service{
-    @Autowired
+
+	@Autowired
     public UserFormRepository userFormRepository;
 
     @Autowired
     public UserRegisterRepository userRegisterRepository;
     @Autowired
     public ApprovedListRepository approvedListRepository;
+    
+    @Autowired
+    public TakalUserRepository takaluserRepository;
 
     @Override
     public UserForm savedetails(UserForm userForm) {
         return userFormRepository.save(userForm);
     }
-
+    
+    @Override
+	public TakalUser savetakaldetails(TakalUser detail) {
+		return takaluserRepository.save(detail);
+	}
+    
     public UserRegister registerUser(UserRegister userRegister) {
         return userRegisterRepository.save(userRegister);
     }

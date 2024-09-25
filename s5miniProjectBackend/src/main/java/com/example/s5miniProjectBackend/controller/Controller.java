@@ -1,5 +1,6 @@
 package com.example.s5miniProjectBackend.controller;
 
+import com.example.s5miniProjectBackend.entity.TakalUser;
 import com.example.s5miniProjectBackend.dto.UserLoginRequest;
 import com.example.s5miniProjectBackend.dto.UserLoginResponse;
 import com.example.s5miniProjectBackend.entity.UserRegister;
@@ -86,7 +87,14 @@ ADD USER FORM CODE
     {
         return service.getAllUserDetails();
     }
-
+    
+    /*post Takal user form */
+    @PostMapping("/takaladd")
+	public String takaladd(@RequestBody TakalUser detail) {
+		service.savetakaldetails(detail);
+		return "User Detils Added Successfully!!!";
+	}    
+    
     @PostMapping("/add-to-approval-list")
     public String addApprovedList(@RequestBody UserForm userForm)
     {
