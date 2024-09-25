@@ -10,5 +10,4 @@ public class S5miniProjectBackendApplication {
 		SpringApplication.run(S5miniProjectBackendApplication.class, args);
 		System.out.println("Application Started");
 	}
-
 }
