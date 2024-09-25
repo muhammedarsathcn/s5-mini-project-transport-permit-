@@ -2,6 +2,7 @@ import {RouterProvider,createBrowserRouter} from 'react-router-dom';
 import UserLogin from "./UserLogin"
 import UserRegister from "./UserRegister";
 import UserFrom from "./UserForm";
+import TakalUserForm from './TakalUserForm';
 import AdminApprove from './AdminApprove';
 import AdminLandingPage from './AdminHomePage';
 import ApprovedList from './ApprovedList';
@@ -20,6 +21,10 @@ function App() {
     {
       path:"/user-form",
       element:<UserFrom/>
+    },
+    {
+      path:"/takal-form",
+      element:<TakalUserForm/>
     },
     {
       path:"/admin-approve",

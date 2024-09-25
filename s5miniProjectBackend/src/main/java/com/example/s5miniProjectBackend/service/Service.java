@@ -1,5 +1,6 @@
 package com.example.s5miniProjectBackend.service;
 
+import com.example.s5miniProjectBackend.entity.TakalUser;
 import com.example.s5miniProjectBackend.entity.UserForm;
 import com.example.s5miniProjectBackend.entity.UserRegister;
 import com.example.s5miniProjectBackend.repository.UserFormRepository;
@@ -9,6 +10,9 @@ import java.util.List;
 
 public interface Service {
     UserForm savedetails(UserForm userForm);
+    
+    public TakalUser savetakaldetails(TakalUser detail);
+    
     public UserRegister registerUser(UserRegister userRegister);
 
     List <UserForm>getAllUserDetails();

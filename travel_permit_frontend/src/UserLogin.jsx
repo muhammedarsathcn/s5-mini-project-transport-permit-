@@ -50,7 +50,7 @@ export default function UserLogin() {
         <h1>Login</h1>
         <p className="registerText">New user?</p>
         <p className="registerText">Register now!</p><br/>
-        <button variant="contained" onClick={() => navigate("/register")}>
+        <button variant="contained" onClick={() => navigate("/user-register")}>
           <b>Go to Register</b>
         </button> 
         </div>      
