@@ -13,6 +13,17 @@ function Form() {
   const [toDate, setToDate] = useState('');
   const [vehicleMode, setVehicleMode] = useState('');
   const [amount, setAmount] = useState('');
+
+  const statesAndUTs = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
+    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", 
+    "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", 
+    "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", 
+    "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", 
+    "West Bengal", "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu", 
+    "Lakshadweep", "Delhi", "Puducherry", "Ladakh", "Jammu and Kashmir"
+  ];
+
   const handleClick = (e) => {
     e.preventDefault();
     const detail = {
@@ -156,25 +167,37 @@ function Form() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="fromPlace">FROM PLACE</label>
-            <input
-              type="text"
-              required
-              id="fromPlace"
-              value={fromPlace}
-              onChange={(e) => setFromPlace(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="toPlace">TO PLACE</label>
-            <input
-              type="text"
-              required
-              id="toPlace"
-              value={toPlace}
-              onChange={(e) => setToPlace(e.target.value)}
-            />
-          </div>
+              <label htmlFor="fromPlace">FROM PLACE</label>
+              <select
+                id="fromPlace"
+                required
+                value={fromPlace}
+                onChange={(e) => setFromPlace(e.target.value)}
+              >
+                <option value="">Select a state/UT</option>
+                {statesAndUTs.map((state, index) => (
+                  <option key={index} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-group">
+              <label htmlFor="toPlace">TO PLACE</label>
+              <select
+                id="toPlace"
+                required
+                value={toPlace}
+                onChange={(e) => setToPlace(e.target.value)}
+              >
+                <option value="">Select a state/UT</option>
+                {statesAndUTs.map((state, index) => (
+                  <option key={index} value={state}>
+                    {state}
+                  </option>
+                ))}
+              </select>
+            </div>
           <div className="form-group">
             <label htmlFor="fromDate">FROM DATE</label>
             <input
