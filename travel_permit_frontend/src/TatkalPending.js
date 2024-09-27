@@ -4,6 +4,7 @@ import"./css/AdminApprove.css";
 
 export default function TatkalPending() {
     const[pending,setpendinglist] = useState([]);
+
   useEffect(() => {
     const fetchdata = async () => {
         try{
@@ -18,12 +19,25 @@ export default function TatkalPending() {
     fetchdata();
   }, []);
 
-//   const handleStatus = async(id) =>{
-//     try{
+  const handleAccept = async (id) =>{
+    try{
+      await fetch(`http://localhost:8080/transportpermit/takkal-list/${id}`,{
+        method:"PUT",
+        headers:{
+          "Content-Type":"application/json"
+        }
+        
+      })
+     
 
-//     }
-    
-//   }
+    }catch(error)
+    {
+      console.error("Error to approve the Tatkkal List")
+    }
+   window.location.reload();
+  }
+
+
   return (
     <div style={{display:"flex"}}>
     
@@ -72,7 +86,7 @@ export default function TatkalPending() {
 
             <div className="Btn-container-approval">
               <button className="btn-reject">Reject</button>
-              <button className="btn-approval" >
+              <button className="btn-approval" onClick={()=>{handleAccept(show.id)}}>
                 Accept
               </button>
             </div>
