@@ -97,5 +97,15 @@ public class ServiceImpl implements Service{
         return null;
     }
 
+    @Override
+    public List<UserForm> getPassedList() {
+        return userFormRepository.findByStatus("Passed");
+    }
+
+    @Override
+    public List<TakalUser> getAllTakkalUser() {
+        return takaluserRepository.findAll();
+    }
+
 
 }

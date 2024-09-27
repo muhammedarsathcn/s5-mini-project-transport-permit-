@@ -30,4 +30,8 @@ public interface Service {
     List<UserForm> getApprovedList();
 
     UserForm passedVehicle(Integer id);
+
+    List<UserForm> getPassedList();
+
+    List<TakalUser> getAllTakkalUser();
 }

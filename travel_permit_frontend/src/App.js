@@ -10,6 +10,8 @@ import CheckHome from './CheckHome';
 import CheckVerify from './CheckpostVerify';
 import './App.css'
 import UserHome from './UserHome';
+import PassedList from './PassedList';
+import TatkalPending from './TatkalPending';
 
 function App() {
   const router = createBrowserRouter([
@@ -52,6 +54,14 @@ function App() {
     {
       path:"/check-verify",
       element:<CheckVerify/>
+    },
+    {
+      path:"/passed-list",
+      element:<PassedList/>
+    },
+    {
+      path:"/takkal-pending",
+      element:<TatkalPending/>
     }
   ])
   return (
