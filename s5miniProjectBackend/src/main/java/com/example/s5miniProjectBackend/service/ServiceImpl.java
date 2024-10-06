@@ -103,8 +103,22 @@ public class ServiceImpl implements Service{
     }
 
     @Override
-    public List<TakalUser> getAllTakkalUser() {
-        return takaluserRepository.findAll();
+    public List<TakalUser> getPendingTakkalUser() {
+        return takaluserRepository.findByStatus("Pending");
+    }
+
+    @Override
+    public TakalUser takkalApproved(Integer id) {
+        Optional<TakalUser> existingTakal = takaluserRepository.findById(id);
+        if(existingTakal.isPresent())
+        {
+            TakalUser takalUser = existingTakal.get();
+            takalUser.setStatus("Approved");
+            takaluserRepository.save(takalUser);
+        }
+
+            return null;
+
     }
 
 

@@ -21,7 +21,23 @@ public class TakalUser {
 	private String vehicleMode;
 	private String amount;
 	private String status = "pending";
-	
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setNo_of_days(Integer no_of_days) {
+		this.no_of_days = no_of_days;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public String getVehicleMode() {
 		return vehicleMode;
 	}
