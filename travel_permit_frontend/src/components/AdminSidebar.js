@@ -10,7 +10,7 @@ const AdminSidebar = () => {
         <a href="/admin-landingpage">
           <li>Home</li>
         </a>
-        <a href="/info">
+        <a href="/takkal-pending">
           <li>Tatkkal List</li>
         </a>
         <a href="/admin-approve">
@@ -18,6 +18,9 @@ const AdminSidebar = () => {
         </a>
         <a href="/approved-list">
           <li>Approved List</li>
+        </a>
+        <a href="/passed-list">
+          <li>Passed List</li>
         </a>
       </ul>
     </div>

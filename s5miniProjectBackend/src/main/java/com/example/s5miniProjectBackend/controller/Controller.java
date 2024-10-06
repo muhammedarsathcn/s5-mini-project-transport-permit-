@@ -14,6 +14,7 @@ import com.example.s5miniProjectBackend.entity.UserForm;
 import com.example.s5miniProjectBackend.service.Service;
 
 import javax.swing.text.html.parser.Entity;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -95,7 +96,13 @@ ADD USER FORM CODE
 	public String takaladd(@RequestBody TakalUser detail) {
 		service.savetakaldetails(detail);
 		return "User Details Added Successfully!!!";
-	}    
+	}
+@GetMapping("/takkal-list")
+    public ResponseEntity<List<TakalUser>> getAllTakkalUser()
+    {
+        List<TakalUser> takalUsers = service.getAllTakkalUser();
+        return ResponseEntity.ok(takalUsers);
+    }
     
     @PostMapping("/add-to-approval-list")
     public String addApprovedList(@RequestBody UserForm userForm)
@@ -128,4 +135,15 @@ ADD USER FORM CODE
         UserForm userForm = service.passedVehicle(id);
         return  ResponseEntity.ok(userForm);
     }
+
+    @GetMapping("/passed-list")
+
+    ResponseEntity<List<UserForm>> getPassedList()
+    {
+        List<UserForm> passedList = service.getPassedList();
+        Collections.reverse(passedList);
+        return  ResponseEntity.ok(passedList);
+    }
+
+   
 }
